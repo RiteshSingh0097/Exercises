@@ -4,5 +4,6 @@ To view any exercise
   2. checkout its respective branch.
 
 Branches:
-  1. Version Control: "versioncontrol"
+  1. Version Control: "git"
   2. Introduction to database: "database"
+  3. Introduction to HTML/CSS: "html"
