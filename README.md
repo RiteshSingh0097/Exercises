@@ -8,3 +8,4 @@ Branches:
   2. Introduction to database: "database"
   3. Introduction to HTML/CSS: "html"
   4. Introduction to Javascript: "javascript"
+  5. Introduction to JQuery: "JQuery"
