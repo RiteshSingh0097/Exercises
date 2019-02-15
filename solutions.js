@@ -73,14 +73,14 @@ $(".addClick").click(
 $("#addDyn").click(
     function () {
 
-        $(".s8").prepend("<button id=dynamicButton>Click me to get an alert.</button>");
+        $(".s8").prepend("<button class='dynamicButton'>Click me to get an alert.</button>");
     }
 
 );
 
 $("#makeClickWork").on('click',
     function () {
-        $("#dynamicButton").on('click', function () {
+        $(".dynamicButton").on('click', function () {
             alert("it worked");
         });
     }
@@ -117,8 +117,9 @@ $("#hoverHereButton").hover(
 
 $('#stop').click(
     function () {
-        $("#googleLink").removeAttr("href", "target");
-
+        $("#googleLink").click(function (e) {
+        	e.preventDefault();
+        });
     }
 );
 
