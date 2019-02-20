@@ -27,8 +27,11 @@ public class Question6 {
                 top--;
             }
             else
-                stack[++top] = arr[i];
+                break;
         }
-        System.out.println(stack[top]);   // printing the element
+        if(top==-1)
+            System.out.println("Enter a distinct value.");
+        else
+            System.out.println(stack[top]);   // printing the element
     }
 }
