@@ -8,11 +8,11 @@ public class Question4 {
         Scanner sc = new Scanner(System.in);
         String str = sc.nextLine();
 
-        double lowerCount = 0;
-        double upperCount = 0;
-        double digitCount = 0;
-        double specialCount =0;
-        double length = str.length();
+        int lowerCount = 0;
+        int upperCount = 0;
+        int digitCount = 0;
+        int specialCount =0;
+        int length = str.length();
         for (int i=0;i<length;i++){
             char ch = str.charAt(i);
 
@@ -28,10 +28,10 @@ public class Question4 {
                 specialCount++;
         }
 
-        double lowPercent = (lowerCount/length)*100;
-        double uppPercent = (upperCount/length)*100;
-        double digitPercent = (digitCount/length)*100;
-        double specPercent = (specialCount/length)*100;
+        float lowPercent = (float) lowerCount/length*100;
+        float uppPercent = (float)upperCount/length*100;
+        float digitPercent = (float)digitCount/length*100;
+        float specPercent = (float)specialCount/length*100;
 
         System.out.println("No. of lowercase letters : "+lowerCount+" percent : "+lowPercent);
         System.out.println("No. of uppercase letters : "+upperCount+" percent : "+uppPercent);
