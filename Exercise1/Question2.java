@@ -21,7 +21,7 @@ public class Question2 {
                     }
                 }
                 if(count>0 && !words[i].equals("O"))
-                    System.out.println(words[i]);
+                    System.out.println(words[i]+"----"+(count+1));
             }
         }
 
