@@ -1,4 +1,4 @@
-// 3. WAP to produce NoClassDefFoundError and ClassNotFoundException exception.
+
 class Singleton {
 
     private static Singleton singleton = null;
@@ -8,8 +8,11 @@ class Singleton {
     }
 
     public static Singleton getInstance() {
-        if (singleton == null)
-            singleton = new Singleton();
+        if (singleton == null) {
+            synchronized (Singleton.class) {
+                singleton = new Singleton();
+            }
+        }
         return singleton;
     }
 }
