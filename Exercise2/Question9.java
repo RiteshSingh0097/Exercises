@@ -1,34 +1,36 @@
 import java.util.Scanner;
-abstract class Furniture{
+
+abstract class Furniture {
 
     String product;
     int stressLevel;
     int fireTest;
 
-    abstract String getProduct();
+    abstract void getProduct();
+
     abstract void stressLevel();
+
     abstract void fireTest();
 }
 
-class Wood extends Furniture{
+class Wood extends Furniture {
 
-    public Wood(String product,int stressLevel, int fireTest) {
+    public Wood(String product, int stressLevel, int fireTest) {
         this.product = product;
-         this.stressLevel = stressLevel;
-         this.fireTest = fireTest;
+        this.stressLevel = stressLevel;
+        this.fireTest = fireTest;
     }
 
     @Override
-    public String getProduct() {
-        return product;
+    public void getProduct() {
+        System.out.println("Type of Product : " + product);
     }
 
     @Override
     public void stressLevel() {
-        if (stressLevel<500){
+        if (stressLevel < 500) {
             System.out.println("wooden furniture handles stress");
-        }
-        else{
+        } else {
             System.out.println("Wooden furniture does not handle stress");
         }
 
@@ -36,25 +38,24 @@ class Wood extends Furniture{
 
     @Override
     public void fireTest() {
-        if (fireTest > 20){
+        if (fireTest > 20) {
             System.out.println("fire can be handled by wooden items");
-        }
-        else
+        } else
             System.out.println("fire can not be handled by wooden items");
     }
 }
 
-class Metal extends Furniture{
+class Metal extends Furniture {
 
-    public Metal(String product,int stressLevel, int fireTest) {
+    public Metal(String product, int stressLevel, int fireTest) {
         this.product = product;
         this.stressLevel = stressLevel;
         this.fireTest = fireTest;
     }
 
     @Override
-    public String getProduct() {
-        return product;
+    public void getProduct() {
+        System.out.println("Type of Product : " + product);
     }
 
     @Override
@@ -68,7 +69,7 @@ class Metal extends Furniture{
 
     @Override
     public void fireTest() {
-        if (fireTest >100)
+        if (fireTest > 100)
             System.out.println("fire can be handled by metal items");
         else
             System.out.println("fire can not handled by metal items");
@@ -93,14 +94,13 @@ public class Question9 {
         System.out.println("Enter the fire level : ");
         int fire = sc.nextInt();
 
-        if (type.equals("wood")){
-            Wood wood = new Wood(product,stress,fire);
+        if (type.equals("wood")) {
+            Wood wood = new Wood(product, stress, fire);
             wood.getProduct();
             wood.fireTest();
             wood.stressLevel();
-        }
-        else{
-            Metal metal = new Metal(product,stress,fire);
+        } else {
+            Metal metal = new Metal(product, stress, fire);
             metal.getProduct();
             metal.fireTest();
             metal.stressLevel();
