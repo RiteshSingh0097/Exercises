@@ -13,15 +13,19 @@ public class Q2 {
         Scanner sc = new Scanner(System.in);
 
         String string = sc.next();
-        char[] charArray = string.toCharArray();
+
+        int uniqueCharacter = noOfUniqueCharacters(string);
+
+        System.out.println("No. of unique character : " + uniqueCharacter);
+    }
+
+    public static int noOfUniqueCharacters(String string) {
 
         Set<Character> set = new HashSet<>();
 
-        for (int i=0; i<charArray.length; i++){
-            set.add(charArray[i]);
-        }
+        for (int i = 0; i < string.length(); i++)
+            set.add(string.charAt(i));
 
-        System.out.println(set.toString());
-
+        return set.size();
     }
 }
