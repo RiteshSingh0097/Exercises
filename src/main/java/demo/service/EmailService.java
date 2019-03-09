@@ -25,6 +25,11 @@ public class EmailService {
 
     boolean sendEmail(Order order, String cc) {
         // implementation goes here
+        String upper = upperCase(cc);
         return true;
     }
+     String upperCase(String str){
+
+        return str.toUpperCase();
+     }
 }

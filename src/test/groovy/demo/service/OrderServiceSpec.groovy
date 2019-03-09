@@ -43,12 +43,12 @@ class OrderServiceSpec extends Specification {
         and: "mocking EmailService"
         EmailService emailService = Mock(EmailService)
         orderService.emailService = emailService
-
+        emailService.sendEmail(_ as Order, _ as String) >> true
         when:
         boolean status = orderService.placeOrder(order, cc)
 
         then:
-        1 * emailService.sendEmail(order, cc) >> inputStatus
+        1 * emailService.sendEmail(order, cc)
         order.getPriceWithTex() == 480d
         status == expectedStatus
 
